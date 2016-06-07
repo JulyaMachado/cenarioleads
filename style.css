@@ -1,0 +1,449 @@
+*{margin: 0; padding: 0;}
+
+body{
+    font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+}
+
+.container{
+    padding: 90px 50px 50px 30px;
+}
+
+h2, h5{
+    color: #469ace;
+}
+
+hr{
+    border-bottom: 1px solid #469ace;
+    max-width: 98%;
+}
+
+p{
+    text-align: justify;
+}
+
+.categories{
+    text-align: center;
+}
+
+.btn-blue {
+    background-color: #2e9bce;
+    padding: 20px 0;
+    border: none!important;
+}
+
+.btn-blue a{
+    color: #ffffff;
+}
+
+.box_form{
+    z-index: 9999999999;
+}
+
+.conteudo{
+    padding: 50px 0px 100px 35px;
+    background: linear-gradient(to right,  #2c94c5 0%,#33ade6 40%,#33ade6 100%);
+}
+
+.box_form h1{
+    color: #fff600;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.box_form h4{
+    color: #ffffff;
+    font-weight: bold;
+}
+
+select.input-lg {
+    height: 34px!important;
+    line-height: 34px!important;
+}
+
+.form-control{
+    display: block;
+    height: 34px;
+    padding: 6px 1px 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-group {
+    margin-bottom: 5px!important;
+}
+
+.btn-orange{
+    background: #ee5c0c;
+    background: -moz-linear-gradient(top, #fc7500 0%, #ee5c0c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fc7500), color-stop(100%,#ee5c0c));
+    background: -webkit-linear-gradient(top, #fc7500 0%, #ee5c0c 100%);
+    background: -o-linear-gradient(top, #fc7500 0%, #ee5c0c 100%);
+    background: -ms-linear-gradient(top, #fc7500 0%, #ee5c0c 100%);
+    background: linear-gradient(top, #fc7500 0%, #ee5c0c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc7500', endColorstr='#ee5c0c',GradientType=0 );
+    border: 1px solid #dc5003;
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    text-shadow: 1px 1px 2px #000000;
+    margin-top: 12px;
+}
+
+.btn-orange:hover{
+    background: #ee5c0c;
+    border: 1px solid #dc5003;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.box_form_mob{
+    margin-top: 100px;
+    z-index: 9;
+}
+
+.conteudo_mob{
+    padding: 10px;
+    background: linear-gradient(to right,  #2c94c5 0%,#33ade6 40%,#33ade6 100%);
+}
+
+.box_form_mob h1{
+    color: #fff600;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.box_form_mob h4{
+    color: #ffffff;
+    font-weight: bold;
+}
+
+select.input-lg {
+    height: 34px!important;
+    line-height: 34px!important;
+}
+
+.form-control{
+    display: block;
+    height: 34px;
+    padding: 6px 1px 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-group {
+    margin-bottom: 5px!important;
+}
+
+.btn-empty-mob{
+    background: #ee5c0c;
+    background: -moz-linear-gradient(top, #fc7500 0%, #ee5c0c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fc7500), color-stop(100%,#ee5c0c));
+    background: -webkit-linear-gradient(top, #fc7500 0%, #ee5c0c 100%);
+    background: -o-linear-gradient(top, #fc7500 0%, #ee5c0c 100%);
+    background: -ms-linear-gradient(top, #fc7500 0%, #ee5c0c 100%);
+    background: linear-gradient(top, #fc7500 0%, #ee5c0c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc7500', endColorstr='#ee5c0c',GradientType=0 );
+    border: 1px solid #dc5003;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px #000000;
+    margin-top: 12px;
+}
+
+.btn-empty-mob:hover{
+    background: #ee5c0c;
+    border: 1px solid #dc5003;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.bg_topo{
+    height: 700px;
+    background: url('../img/bgPlanosSaudeFixedAmil1440menos.jpg') no-repeat;
+}
+
+.nav{
+    margin: 40px 0 0 -12px;
+
+}
+
+.nav li a{
+    padding: 9px 6px;
+}
+
+.navbar-inverse{
+    background: rgba(255,255,255,0.6);
+    padding-bottom: 25px;
+    border: none!important;
+    z-index: 99;
+}
+
+.navbar-nav li a{
+    color: #777777!important;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.navbar-nav li a:hover{
+    color: #333333!important;
+    transition: all 0.7s;  
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s; 
+    -ms-transition: all 0.7s;
+    -o-transition: all 0.7s;
+}
+
+.nav li a:focus{
+    background: #e7e7e7!important;
+    color: #333333!important;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+    background: #ddd!important;
+    border-bottom: none!important;
+}
+
+.navbar-inverse .navbar-toggle{
+    border-color: #999999;
+    background: #e7e7e7;
+}
+
+.icon-bar{
+    background: #999999!important;
+}
+
+.navbar-toggle:hover{
+    background: #ddd!important;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+    border-color: #e7e7e7!important;
+}
+
+.quem_somos{
+    background-color: #f5f5f5;
+}
+
+.categories .icon{
+    color: #469ace;
+}
+
+.planos{
+    background-color: #ededed;
+}
+
+.box{
+    padding: 20px;
+}
+
+.box2{
+    padding: 30px!important;
+}
+
+.box-img{
+    padding-bottom: 30px;
+}
+
+.box-texto{
+    padding-top: 30px;
+}
+
+.vantagens{
+    background-color: #f5f5f5;
+}
+
+i.fa-van{
+    width: 60px!important;
+    height: 60px!important;
+    color: #ffffff;
+    background-color: #469ace;
+    border-radius: 8px;
+    padding-top: 7px;
+    font-size: 45px!important;
+    text-align: center;
+}
+
+.icon-van p{
+    margin-right: 40px;
+}
+
+.icon-van h4{
+    color: #469ace;
+}
+
+.seguranca{
+    background-color: #ededed;
+}
+
+.box-seg{
+    padding: 30px;
+}
+
+.img-seg{
+    margin:-220px 0 30px 0;
+}
+
+i.fa-seg{
+    width: 100%!important;
+    height: 60px!important;
+    color: #ffffff;
+    background-color: #469ace;
+    border-radius: 8px;
+    padding-top: 7px;
+    font-size: 45px!important;
+    text-align: center;
+}
+
+.seguranca h4{
+    color: #469ace;
+    font-weight: bold; 
+}
+
+.seguranca .icon-seg{
+    text-align: center;
+}
+
+.seguranca .btn-seguranca {
+    text-align: center;  
+}
+
+.tipos{
+    background-color: #f5f5f5;
+}
+
+.box-ti{
+    padding-bottom: 15px;
+}
+
+.carencia{
+    background-color: #ededed;
+}
+
+.profissoes{
+    background-color: #f5f5f5;
+}
+
+.profissoes i.fa-caret-right{
+    color: #f46807;
+}
+
+footer{
+    background-color: #f5f5f5;
+    text-align: center!important;
+}
+
+.content_footer{
+    padding: 50px 50px 15px 30px;
+}
+
+@media screen and ( min-width: 1900px ){
+
+    .conteudo{
+        padding: 50px 0px 600px 35px;
+    }
+
+    .bg_topo{
+        height: 1000px;
+        background: url('../img/bgPlanosSaudeFixedAmil1440menos2.jpg') no-repeat;
+    }
+
+    .container{
+        padding: 90px 90px 50px 30px;
+    }
+
+}
+
+@media screen and ( max-width: 991px ){
+
+    .bg_topo{
+        background: url('../img/bgPlanosSaudeFixedAmil1440menos4.jpg') no-repeat;
+    }
+
+    .box_form_mob{
+        margin-top: 170px;
+    }
+
+    .img-seg{
+        margin:-240px 0 30px 0;
+    }
+
+    .quem_somos img{
+        max-width: 90%;
+    }
+
+    .planos img{
+        max-width: 80%;
+    } 
+
+}
+
+@media screen and ( min-width: 569px ) and ( max-width: 768px ){
+
+    .box_form_mob{
+        margin-top: 170px;
+    }
+
+    .bg_topo{
+        height: 700px;
+        background: url('../img/bgPlanosSaudeFixedAmil1440menos3.jpg') no-repeat;
+    }  
+
+    .img-seg{
+        margin:-260px 0 30px 0;
+    } 
+
+    .quem_somos img{
+        max-width: 90%;
+    }
+
+    .planos img{
+        max-width: 80%;
+    }
+
+}
+
+@media screen and ( max-width: 568px ){
+
+    .logo{
+        max-width: 70%!important;
+    }
+
+    .box_form_mob{
+        margin-top: 100px!important;
+    }
+
+    .navbar-inverse{
+        background: rgba(255,255,255,0.9);
+        padding-bottom: 25px;
+        border: none!important;
+        z-index: 99;
+    }
+
+    .categories .icon{
+        padding-bottom: 25px;
+    }
+
+}
