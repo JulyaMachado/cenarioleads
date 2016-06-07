@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+<html <?php language_attributes(); ?>>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="<?php bloginfo('charset') ?>">
+        <meta charset="<?php bloginfo('charset') ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Encontre o melhor plano de saúde para você, sua família ou empresa!">
+        <meta name="author" content="Cenário Capital LTDA">
+        <link href="<?php bloginfo('template_url'); ?>/assets/img/favicon.png" rel="shortcut icon" />
+
+        <title>Planos de Saúde - Cote Já!</title>
+
+        <link href="<?php bloginfo('template_directory'); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php bloginfo('template_directory'); ?>/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php bloginfo('template_directory'); ?>/assets/css/style.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+        <!-- [if it IE 9]>-->
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <!--[endif]-->
+
+    </head>
+
+    <body>
+
+    <div class="box_form row col-sm-4 col-md-4 col-lg-4 pull-right hidden-xs hidden-sm">
+            
+        <div class="conteudo"  style="position:fixed;">
+
+            <div class="arrow_form">
+                <img src="<?php bloginfo('template_url'); ?>/assets/img/imgArrow.png" title="Cote Já!" alt="imgArrow.png"/>
+            </div> 
+        
+            <div class="register row col-sm-12 col-md-12 col-lg-12" id="formCadastro">
+
+                <div id="formHidden">
+
+                    <h1 align="center">Faça uma simulação de plano de saúde online!</h1>
+                    <h4>Encontre o melhor plano para você, sua família ou empresa:</h4>
+
+                    <form role="form" method="POST">
+
+                        <div class="formGroup form-group">                      
+                            <select data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" id="bitCnpj" name="bitCnpj" class="form-control input-lg">
+                                <option value="">Você possui CNPJ?</option>
+                                <option  value="0">Não possuo CNPJ</option>
+                                <option  value="1">Sim, possuo CNPJ</option>
+                            </select>
+                        </div>
+
+                        <div class="formGroup form-group input-group">
+                            <span id="basic-addon1" class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input data-toggle="tooltip" title="Insira seu nome completo" data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" type="text" id="strNome" name="strNome" class="form-control input-lg" placeholder="Nome do Contato" value="">
+                        </div>
+
+                        <div class="formGroup form-group classStrEmpresa hide">
+                            <input data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" type="text" id="strEmpresa" name="strEmpresa" class="form-control input-lg" placeholder="Nome da Sua Empresa" value="">
+                        </div>
+
+                        <div class="formGroup form-group input-group">
+                            <span id="basic-addon1" class="input-group-addon" style="padding-right: 10px;"><i class="fa fa-envelope-o"></i></span>
+                            <input aria-describedby="basic-addon1" data-toggle="tooltip" title="Insira email corretamente Exemplo: email@exemplo.com.br" data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" data-fv-emailaddress="true" data-fv-emailaddress-message="Email inválido" type="email" id="strEmail" name="strEmail" class="form-control input-lg" placeholder="Email" value="">
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="formGroup form-group input-group">
+                                    <span id="basic-addon1" class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                    <input data-toggle="tooltip" title="Insira seu telefone com DDD" data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" data-fv-telephone="true" type="text" id="strTelefone" name="strTelefone" class="form-control input-lg" placeholder="Telefone" value="">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="formGroup form-group input-group">
+                                    <span id="basic-addon1" class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                                    <input data-toggle="tooltip" title="Insira seu telefone com DDD" data-fv-telephone="true" type="text" id="strTelefoneSecundario" name="strTelefoneSecundario" class="form-control input-lg" placeholder="Tel. Alternativo" value="">
+                                </div>
+                            </div>
+                                    
+                        </div>
+
+                        <div class="row">
+                        
+                            <div class="formGroup form-group col-sm-6 col-md-6 col-lg-6">
+                                <select data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" id="rIdEstados" name="rIdEstados" class="form-control input-lg">
+                                    <option value="">Estado</option>
+                                </select>
+                            </div>
+
+                            <div class="formGroup form-group col-sm-6 col-md-6 col-lg-6">
+                                <select data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" id="rIdCidades" name="rIdCidades" class="form-control input-lg">
+                                    <option value="">Cidade</option>
+                                </select>
+                                <input type="hidden" name="hfCidadeSelecionada" id="hfCidadeSelecionada" value="">
+                            </div>
+
+                        </div>      
+
+                        <div class="formGroup form-group">                      
+                            <input data-toggle="tooltip" title="Insira apenas números" data-fv-notempty="true" 
+                            data-fv-notempty-message="Campo obrigatório" type="number" id="intNumeroPessoas" 
+                            name="intNumeroPessoas" min="1" class="form-control input-lg" placeholder="Quantidade de Pessoas" value="">
+                        </div>
+                        
+                        <button type="submit" class="btn-orange btn-empty btn-block btn-lg">RECEBER PROPOSTA</button>
+                               
+                    </form>
+
+                </div>
+        
+            </div>
+
+        </div>
+
+    </div>
+    
+    
+    <section class="box_form_mob hidden-lg hidden-md visible-sm visible-xs col-xs-12">
+            
+        <div class="conteudo_mob">       
+        
+            <div class="register_mob" id="formCadastro">
+
+                <div id="formHidden">
+
+                    <h1 align="center">Faça uma simulação de plano de saúde online!</h1>
+                    <h4>Encontre o melhor plano para você, sua família ou empresa:</h4>
+
+                    <form role="form" method="POST">
+
+                        <div class="formGroup form-group">                      
+                            <select data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" id="bitCnpj" name="bitCnpj" class="form-control input-lg">
+                                <option value="">Você possui CNPJ?</option>
+                                <option  value="0">Não possuo CNPJ</option>
+                                <option  value="1">Sim, possuo CNPJ</option>
+                            </select>
+                        </div>
+
+                        <div class="formGroup form-group input-group">
+                            <span id="basic-addon1" class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input data-toggle="tooltip" title="Insira seu nome completo" data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" type="text" id="strNome" name="strNome" class="form-control input-lg" placeholder="Nome do Contato" value="">
+                        </div>
+
+                        <div class="formGroup form-group classStrEmpresa hide">
+                            <input data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" type="text" id="strEmpresa" name="strEmpresa" class="form-control input-lg" placeholder="Nome da Sua Empresa" value="">
+                        </div>
+
+                        <div class="formGroup form-group input-group">
+                            <span id="basic-addon1" class="input-group-addon" style="padding-right: 10px;"><i class="fa fa-envelope-o"></i></span>
+                            <input aria-describedby="basic-addon1" data-toggle="tooltip" title="Insira email corretamente Exemplo: email@exemplo.com.br" data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" data-fv-emailaddress="true" data-fv-emailaddress-message="Email inválido" type="email" id="strEmail" name="strEmail" class="form-control input-lg" placeholder="Email" value="">
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="formGroup form-group input-group">
+                                    <span id="basic-addon1" class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                    <input data-toggle="tooltip" title="Insira seu telefone com DDD" data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" data-fv-telephone="true" type="text" id="strTelefone" name="strTelefone" class="form-control input-lg" placeholder="Telefone" value="">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="formGroup form-group input-group">
+                                    <span id="basic-addon1" class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                                    <input data-toggle="tooltip" title="Insira seu telefone com DDD" data-fv-telephone="true" type="text" id="strTelefoneSecundario" name="strTelefoneSecundario" class="form-control input-lg" placeholder="Tel. Alternativo" value="">
+                                </div>
+                            </div>
+                                    
+                        </div>
+
+                        <div class="row">
+                        
+                            <div class="formGroup form-group col-sm-6 col-md-6 col-lg-6">
+                                <select data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" id="rIdEstados" name="rIdEstados" class="form-control input-lg">
+                                    <option value="">Estado</option>
+                                </select>
+                            </div>
+
+                            <div class="formGroup form-group col-sm-6 col-md-6 col-lg-6">
+                                <select data-fv-notempty="true" data-fv-notempty-message="Campo obrigatório" id="rIdCidades" name="rIdCidades" class="form-control input-lg">
+                                    <option value="">Cidade</option>
+                                </select>
+                                <input type="hidden" name="hfCidadeSelecionada" id="hfCidadeSelecionada" value="">
+                            </div>
+
+                        </div>      
+
+                        <div class="formGroup form-group">                      
+                            <input data-toggle="tooltip" title="Insira apenas números" data-fv-notempty="true" 
+                            data-fv-notempty-message="Campo obrigatório" type="number" id="intNumeroPessoas" 
+                            name="intNumeroPessoas" min="1" class="form-control input-lg" placeholder="Quantidade de Pessoas" value="">
+                        </div>
+                        
+                        <button type="submit" class="btn-orange btn-empty-mob btn-block btn-lg">RECEBER PROPOSTA</button>
+                               
+                    </form>
+
+                </div>
+        
+            </div>
+
+        </div>
+
+    </section> 
+    
+
+    <header class="bg_topo row col-md-9 col-lg-9" role="banner">
+    <div id="scroll-topo" a href="#scroll-topo" class="scroll"></a></div>
+
+        <div class="navbar-wrapper">
+
+            <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <div class="navbar-brand" href="/"><img class="logo" src="<?php bloginfo('template_url'); ?>/assets/img/imgLogoBackground.png" alt="imgLogoBackground.png" title="Faça Já sua Cotação!"></div>
+                        
+                    </div>
+
+                    <div class="navbar-collapse collapse">
+
+                        <ul class="nav navbar-nav">
+
+                            <li>
+                                <a href="#scroll-qsomos" class="scroll">QUEM SOMOS</a>
+                            </li>
+                            <li>
+                                <a href="#scroll-planos" class="scroll">PLANOS</a>
+                            </li>
+                            <li>
+                                <a href="#scroll-vantagens" class="scroll">VANTAGENS</a>
+                            </li>
+                            <li>
+                                <a href="#scroll-seguranca" class="scroll">SEGURANÇA</a>
+                            </li>
+                            <li>
+                                <a href="#scroll-tipos" class="scroll">TIPOS DE PLANO</a>
+                            </li>
+                            <li>
+                                <a href="#scroll-carencia" class="scroll">CARÊNCIA</a>
+                            </li>
+                            <li>
+                                <a href="#scroll-profissoes" class="scroll">PROFISSÕES</a>
+                            </li>
+
+                        </ul>
+                        
+                    </div>
+
+                </div>
+                
+            </div>
+            
+        </div>
+            
+    </header>
+
+
+    <section class="quem_somos row col-md-9 col-lg-9">
+    <div id="scroll-qsomos" a href="#scroll-qsomos" class="scroll"></a></div>
+
+
+        <div class="container row col-sm-12 col-md-12 col-lg-12">
+
+            <h2>QUEM SOMOS?</h2>
+            <hr>
+    
+            <div class="col-sm-4 col-md-4 col-lg-4">
+
+                <div>
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/imgOperadorasFixedAmil.jpg" title="Cote já planos de saúde!" alt="imgOperadorasFixedAmil.jpg"/>
+                </div>
+
+            </div>
+
+            <div class="col-sm-8 col-md-8 col-lg-8">  
+
+                <div class="descricao">
+                    <p>
+                        Com a missão “Ajudar as pessoas a viver de forma mais saudável”, a Amil oferece no mercado brasileiro diversas opções de planos de saúde. Sempre preocupada com seus clientes, a empresa 
+                        sempre busca oferecer serviços diferenciados e de ótima qualidade, garantindo excelência em seu atendimento. A operadora possui programas inovadores como o Amil Resgate Saúde, um 
+                        sistema de transporte inter-hospitalar; Amil Assistência  Multiviagem, garantindo assistência médica em viagens internacionais; Sistema Integrado de Saúde, em pontos estratégicos de 
+                        São Paulo. Estes são só alguns dos projetos que a Amil possui, o que mostra o empenho da empresa de fazer diferença no setor da saúde. 
+                    </p><br/>
+                    <h5>UM POUCO DA HISTÓRIA</h5><br/>
+                    <p>
+                        A operadora iniciou a sua história na Casa de Saúde São Jorge no Rio de Janeiro. Após aquisições de algumas clínicas da região, foi criada a Empresa de Serviços Hospitalares (Esho), 
+                        para administrar o grupo. Posteriormente a empresa mudou seu nome para Amil Assistência Médica Internacional, em 1978. A operadora foi criada com a ideia ousada de consultas e exames 
+                        sem limites, e teve o primeiro serviço de tele atendimento 24 horas, tornando-se o telefone mais conhecido do Rio de Janeiro.  
+                    </p>
+                </div>
+
+                <div class="amil_number">
+
+                    <br/><hr><br/>
+
+                    <h5 align="center">AMIL EM NÚMEROS</h5><br/>
+
+                    <div class="categories">
+
+                        <div class="icon col-sm-3 col-md-3 col-lg-3 ">
+                            <i class="fa fa-2x fa-star media-object"></i><br/>DESDE 1978 NO MERCADO
+                        </div>
+                        <div class="icon col-sm-3 col-md-3 col-lg-3">
+                            <i class="fa fa-2x fa-list-alt media-object"></i><br/> 5,9 MILHÕES DE CLIENTES
+                        </div>
+                        <div class="icon col-sm-3 col-md-3 col-lg-3">
+                            <i class="fa fa-2x fa-stethoscope media-object"></i><br/> 2103 HOSPITAIS 
+                        </div>                                        
+                        <div class="icon col-sm-3 col-md-3 col-lg-3">
+                            <i class="fa fa-2x fa-group media-object"></i><br/> 27.564.316 CONSULTAS POR ANO
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>   
+            
+        </div>
+
+    </section>
+
+        
+    <section class="planos row col-md-9 col-lg-9">
+    <div id="scroll-planos" a href="#scroll-planos" class="scroll"></a></div>
+        
+        <div class="container row col-sm-12 col-md-12 col-lg-12">
+
+            <h2>OPÇÕES DE PLANOS</h2>
+            <hr>
+            <h4>Conheça os planos que só a Amil pode oferecer!</h4><br/>
+                                  
+            <div class="categories row col-sm-12 col-md-12 col-lg-12">
+
+                <div class="box col-sm-4 col-md-4 col-lg-4">
+                    <div class="box2" style="border: 1px solid rgb(204, 204, 204); border-radius: 5px; box-shadow: 0px 16px 0px rgb(0, 174, 239) inset;min-height: 445px;" >
+                        <div style="border-bottom: 1px solid #ccc;">
+                            <img class="box-img" src="<?php bloginfo('template_url'); ?>/assets/img/logoAmilLinhaBlue.png" title="Cote já planos de saúde Amil Linha Blue" alt="logoAmilLinhaBlue.png">
+                        </div>
+                        <div class="box-texto">                                        
+                            <p>Planos com um atendimento pleno, que oferecem cobertura nacional em uma rede credenciada abrangente e de alto nível.</p>
+                        </div>
+                    </div>
+                </div>           
+
+                <div class="box col-sm-4 col-md-4 col-lg-4">
+                    <div  class="box2" style="border: 1px solid rgb(204, 204, 204); border-radius: 5px; box-shadow: 0px 16px 0px rgb(0, 168, 142) inset;min-height: 445px;">
+                        <div style="border-bottom: 1px solid #ccc;">
+                            <img class="box-img" src="<?php bloginfo('template_url'); ?>/assets/img/logoAmilLinhaMedial.png" title="Cote já planos de saúde Amil Linha Medial" alt="logoAmilLinhaMedial.png"/>
+                        </div>
+                        <div class="box-texto">                                        
+                            <p>Uma escolha extremamente racional, que garante alta qualidade no atendimento com custo bastante acessível.</p>
+                        </div>
+                    </div>   
+                </div>         
+
+                <div class="box col-sm-4 col-md-4 col-lg-4">
+                    <div class="box2" style="border: 1px solid rgb(204, 204, 204); border-radius: 5px; box-shadow: 0px 16px 0px rgb(243, 111, 33) inset;min-height: 445px;">
+                        <div style="border-bottom: 1px solid #ccc;">
+                            <img class="box-img" src="<?php bloginfo('template_url'); ?>/assets/img/logoAmilLinhaDix.png" title="Cote já planos de saúde Amil Linha Dix" alt="logoAmilLinhaDix.png"/>
+                        </div>
+                        <div class="box-texto">                                        
+                            <p>A melhor relação custo-benefício do mercado, com um conjunto de benefícios que nenhum outro plano do seu segmento tem.</p>
+                        </div>
+                    </div>
+                </div> 
+            
+                <button class="btn-blue btn-empty btn-block btn-lg">
+                    <a href="#scroll-tipos" class="scroll" style="text-decoration: none;">
+                        CONSULTE OS TIPOS DE PLANO E SUAS CARÊNCIAS
+                    </a>
+                </button>
+
+            </div>                                       
+        
+        </div>
+    
+    </section>
+
+
+
+    <section class="vantagens row col-md-9 col-lg-9">
+    <div id="scroll-vantagens" a href="#scroll-vantagens" class="scroll"></a></div>
+
+            <div class="container row col-sm-12 col-md-12 col-lg-12">
+
+                <h2>VANTAGENS</h2>
+                <p><i>Negociamos com as principais operadoras do mercado para oferecer os melhores planos de saúde com o melhor custo benefício.</i></p>
+                <hr><br/>                          
+
+                <div class="row icon-van col-sm-6 col-md-6 col-lg-6">                
+                    <h4><i class="fa fa-money fa-van"></i>  Plano de Saúde mais barato</h4>
+                    <p>Cotando em várias operadoras é possível encontrar o plano ideal para sua necessidade e economizar.</p>         
+                </div>
+
+                <div class="row icon-van col-sm-6 col-md-6 col-lg-6">
+                    <h4><i class="fa fa-stethoscope fa-van"></i> Medicina de primeiro mundo</h4>
+                    <p>Planos com melhores prestadores de serviços em todo Brasil, incluindo acessos aos melhores Hospitais, clinicas e labotarórios.</p>         
+                </div>
+
+                <div class="row icon-van col-sm-6 col-md-6 col-lg-6">   
+                    <h4><i class="fa fa-sitemap fa-van"></i> Rede Credenciada</h4>
+                    <p>Cada operador busca oferecer a maior e melhor cobertura sempre em conformidade com as exigências da ANS, garantindo um atendimento de qualidade.</p>        
+                </div> 
+
+                <div class="row icon-van col-sm-6 col-md-6 col-lg-6"> 
+                    <h4><i class="fa fa-pie-chart fa-van"></i> Plano com coparticipação</h4>
+                    <p>Este tipo d e plano tem a mensalidade mais barata e cada vez que você precisar usar seu plano você apenas paga um valor pequeno pelos serviços utilizados.</p>
+                </div>
+
+                <div class="row icon-van col-sm-6 col-md-6 col-lg-6">
+                    <h4><i class="fa fa-users fa-van"></i> Comodidade</h4>
+                    <p>Nossos corretores parceiros possuem vários canais de comunicação para que você receba sua cotação e feche o melhor negócio.</p>             
+                </div>   
+
+                <div class="row icon-van col-sm-6 col-md-6 col-lg-6">
+                    <h4><i class="fa fa-laptop fa-van"></i> Agendamento de consulta</h4>
+                    <p>Em determinadas operadoras é possível agendar suas consultas 100% online.</p>  
+                </div>       
+            
+            </div>
+            
+    </section>
+
+
+    <section class="seguranca row col-md-9 col-lg-9">
+    <div id="scroll-seguranca" a href="#scroll-seguranca" class="scroll"></a></div>
+            
+        <div class="container row col-sm-12 col-md-12 col-lg-12">
+
+            <h2>SEGURANÇA</h2>
+            <p><i>Porque devo preencher esses dados?</i></p>
+            <hr><br/>
+            
+            <div class="col-sm-12 col-md-12 col-lg-12">
+
+                <div  class="box-seg col-sm-4 col-md-4 col-lg-4">
+                    <div>
+                        <div class="icon-seg">
+                            <i class="fa fa-map-marker fa-seg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Estado e Cidade</h4>
+                        <p>A disponibilidade e condições cp,ercoaos de cada plano é de acordo com o local onde você mora.</p>
+                    </div>
+                </div>
+
+                <div  class="box-seg col-sm-4 col-md-4 col-lg-4">
+                    <div>
+                        <div class="icon-seg">
+                            <i class="fa fa-suitcase fa-seg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Profissão</h4>
+                        <p>Oferecemos planos para categorias profissionais por meio das entidades de classe que os representam</p>
+                    </div>
+                </div>
+
+            </div> 
+
+            <div class="col-sm-12 col-md-12 col-lg-12">
+
+                <div class="box-seg col-sm-4 col-md-4 col-lg-4">
+                    <div>
+                        <div class="icon-seg">
+                            <i class="fa fa-calendar fa-seg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Data de Nascimento</h4>
+                        <p>O valor do plano de saúde é calculado de acordo com a faixa de idade</p>
+                    </div>
+                </div> 
+
+                <div  class="box-seg col-sm-4 col-md-4 col-lg-4">
+                    <div>
+                        <div class="icon-seg">
+                            <i class="fa fa-edit fa-seg"></i>
+                        </div>
+                    </div>                       
+                    <div>
+                        <h4>Dados de Contato</h4>
+                        <p>Com seus dados nossa equipe entrará em contato para entender melhor suas necessiades e assim te apresentar as melhores soluções em plano de saúde.</p>
+                    </div>
+                </div> 
+
+                 <div class="img-seg col-sm-4 col-md-4 col-lg-4 hidden-xs">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/imgSegurancaFixedAmil.jpg" title="Cote já planos de saúde!" alt="imgSegurancaFixedAmil.jpg"/>
+                </div>
+
+            </div>     
+
+            <button class="btn-blue btn-empty btn-block btn-lg">
+                <a href="#scroll-topo" class="scroll" style="text-decoration: none;">
+                    COTE PLANOS DE SAÚDE PARA VOCÊ E SUA FAMÍLIA
+                </a>
+            </button>                     
+        
+        </div>              
+            
+    </section>
+
+
+    <section class="tipos row col-md-9 col-lg-9">
+    <div id="scroll-tipos" a href="#scroll-tipos" class="scroll"></a></div> 
+        
+        <div class="container row col-sm-12 col-md-12 col-lg-12">
+
+                <h2>TIPOS DE PLANO</h2>
+                <hr><br/>
+
+
+                <div class="categories">
+
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #2a78bf;color:#ffffff;">
+                                <h3>Plano de Saúde Individual</h3>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #3390e6;min-height: 200px;color:#ffffff;padding:15px;">                                        
+                                <p>O plano individual é formado por um titular e também pode ser incluído os dependentes do beneficiário titular tornando-se um plano familiar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #b14667;color:#ffffff;">
+                                <h3>Plano de Saúde Familiar</h3>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #d5547c;min-height: 200px;color:#ffffff;padding:15px;">
+                                <p>O Plano familiar é formado por no mínimo um titular e um dependente ou mais.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #398337;color:#ffffff;">
+                                <h3>Plano de Saúde Empresarial</h3>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #449e42;min-height: 200px;color:#ffffff;padding:15px;">                                        
+                                <p>O Plano empresarial é contratado e vinculado através de uma pessoa jurídica e ou profissional autônomo e tanto por ser contratado na modalidade individual como familiar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>       
+            
+        </div>
+        
+    </section>
+
+
+    <section class="carencia row col-md-9 col-lg-9">
+    <div id="scroll-carencia" a href="#scroll-carencia" class="scroll"></a></div>   
+        
+        <div class="container row col-sm-12 col-md-12 col-lg-12">
+
+            <h2>CARÊNCIA</h2>
+            <p><i>Negociamos com as principais operadoras do mercado para oferecer os melhores planos de saúde com o melhor custo benefício.</i></hp>
+            <hr>
+
+            <div class="tabela" data-example-id="striped-table">
+
+                <table class="table table-striped table-responsive">
+                    <thead> 
+                        <tr> 
+                            <th></th>
+                            <th>PRAZO</th>
+                            <th>COBERTURA</th>                                            
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <tr> 
+                            <th scope="row">A</th>
+                            <td>24HORAS</td>
+                            <td>Atendimentos de Urgência/Emergência</td>
+                        </tr> 
+                        <tr>
+                            <th scope="row">B</th>
+                            <td>30 DIAS</td>
+                            <td>Consultas Médicas</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">C</th>
+                            <td>30 DIAS</td>
+                            <td>Raios X simples, hemograma, hemossedimentação, parasitológico de fezes, urina tipo I, colesterol, triglicérides, <br/>glicemia, ácido úrico, sódio, potássio, uréia, creatinina, papanicolau e eletrocardiograma</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">D</th>
+                            <td>180 DIAS</td>
+                            <td>Todos os exames complementares e procedimentos de terapia não relacionados no item C; <br/>Internações, exceto as de urgência/emergência definidas em Lei e as relacionadas no item E;<br/>Internações decorrentes de transtornos psiquiátricos por uso de substâncias químicas</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">E</th>
+                            <td>300 DIAS</td>
+                            <td>Partos a termo</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+        
+    </section>
+
+
+    <section class="profissoes row col-md-9 col-lg-9">
+    <div id="scroll-profissoes" a href="#scroll-profissoes" class="scroll"></a></div>
+        
+        <div class="container row col-sm-12 col-md-12 col-lg-12">
+
+            <h2>PROFISSÕES</h2>
+            <p><i>Temos condições especiais para entidades de classe, confira a lista de profissões abaixo e solicite contato ao lado.</i>
+            <hr><br/>
+
+            <div class="lista">
+
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <ul class="fa-ul">
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Administrador</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Advogado</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Agrônomo</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Analista Tributário</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Arquiteto e Urbanista</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Bacharel em Direito</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Biomédico</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Cirurgião-Dentista</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Comerciário</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Consultor de Venda Direta</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Contabilista</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Corretor de Imóveis</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Defensor Público</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Delegado de Polícia</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Delegado de Polícia Federal</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Designer Gráfico</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Distribuidor de Venda Direta</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Economista</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Empregador do Comércio e Serviços</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Empresário de Venda Direta</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Enfermeiro</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Engenheiro</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Estudante do Ensino Infantil</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Estudante do Ensino Médio ou Fundamental</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Estudante Universitário</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Executivo Público</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Farmacêutico</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Fisioterapeuta</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Fonoaudiólogo</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Funcionário Público</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Gestor Governamental</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Guarda Municipal</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Jornalista</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Juiz Federal</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Magistrado</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Médico</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Nutricionista</b></li>                                        
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <ul class="fa-ul">
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Oficial de Justiça</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Óptico</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Optometrista</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Perito Criminal</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Policial Civil</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Policial Militar</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Procurador</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Procurador da República</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Prof. de Educação Física</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Professor</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Profissional Liberal</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Psicólogo</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Relações Públicas</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Representante Comercial</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Revendedor de Venda Direta</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Servidor da Agricultura</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Servidor das Ag. Reguladoras</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Servidor Público</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Terapeuta Ocupacional</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Veterinário</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Bibliotecário</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Cinematográfico</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Geógrafo</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Geólogo</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Investigador</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Meteorologista</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Músico</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Notário e Registradores</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Prof. da indústria</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Prof. Indústria do Vestuário</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Profissional de TI</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Químico</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Transportador Rodoviário</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Vendedor Autônomo</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Zootecnista</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Notários e Registradores</b></li>                                        
+                        <li><i class="fa-li fa fa-caret-right warning-color"></i> Plano de Saúde para <b>Outras Profissões</b></li>                                        
+                    </ul>
+                </div>
+
+            </div>           
+            
+        </div>
+            
+    </section>   
+
+    <footer class="footer row col-md-9 col-lg-9">
+                
+        <div class="content_footer row col-sm-12 col-md-12 col-lg-12">
+            <p><input type="checkbox" checked="checked" name="strConfirmarDados"> Ao inserir seus dados neste website você concorda que a <img src="<?php bloginfo('template_url'); ?>/assets/img/cc.png" alt="cc.png Cenário Capital ME" title="Cenário Capital ME" /> no papel de gestora do mesmo, os direcione aos parceiros resposáveis pela comercialização do(s) serviço(s) anunciado(s) e que possa utilizá-los para o envio de ofertas através das informações de contato disponibilizadas.</p>                    
+                                
+            <h4 align="center"><a href="#!" >Política de Privacidade</a></h4>
+       
+            <span>CNPJ:11.321.934/0001-41 | Rua Coronel Alfredo Augusto do Nascimento 183 - Sousas Campinas/SP <br/> © 2013 Cenário Capital - Todos os direitos reservados.</span>
+        </div> 
+        
+    </footer>   
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery-2.1.4.min.js"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/assets/js/bootstrap.min.js"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
+        <script src="//use.typekit.net/gla7wnd.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+    </body>
+
+</html>
+<!-- ========================================
+Julya Machado DESIGNER | DEVELOPER
+========================================== -->
