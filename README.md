@@ -1,2 +1,2 @@
 # cenarioleads
-Processo Seletivo - Grupo AllCross 
+Grupo AllCross 
